@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Oswald:wght@500&display=swap');
+html{
+    height: 100%;
+}
+h1{
+    text-align: center;
+}
+
+/* --- NEUMORPHISM BASE STYLES --- */
+:root {
+    /* Base color matching the lighter blue/grey tone of the background gradient */
+    --base-color: #c9d8fa; 
+    /* Darker shade derived from the base color for the dark shadow */
+    --dark-shadow: #98a5c3; 
+    /* Lighter shade derived from the base color for the light shadow */
+    --light-shadow: #ffffff; 
+    /* A soft radius for the "soft" look */
+    --neumo-radius: 15px;
+    
+    /* ⬅️ UPDATED ACCENT COLORS FOR READABILITY ON DARK BACKGROUND */
+    --accent-indigo: #4a90e2; /* Vibrant Blue */
+    --accent-orange: #f5a623; /* Vibrant Orange */
+    --accent-green: #b8e986; /* Soft Lime Green for description */
+    
+    --transparent-base: rgba(255, 255, 255, 0.2);
+}
+body{
+    /* KEEPING THE ORIGINAL BACKGROUND */
+    padding: 1rem 5rem;
+    font-family: 'Montserrat', sans-serif; /* ⬅️ CHANGED FONT */
+    text-transform: capitalize;
+    background: url('./background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue; 
+    
+    /* 🛠️ FIX for Full-Screen Background */
+    min-height: 100vh;
+    margin: 0;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.header h1{
+    /* Using a bright accent color from the original CSS */
+    color: var(--accent-indigo);
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif; /* ⬅️ CHANGED FONT */
+}
+/* --- INPUT FIELD STYLING (RECESSED) --- */
+#input{
+    font-size: 18px;
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    border-radius: var(--neumo-radius);
+    background: var(--transparent-base);
+    /* Neomorphic recessed/inner shadow effect */
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.6),
+                inset -5px -5px 10px rgba(255, 255, 255, 0.1);
+    color: white; /* Dark text color for readability */
+    transition: all 0.2s ease-in-out;
+}
+#input::placeholder {
+    /* ⬅️ Changed to a brighter, translucent white for better visibility */
+    color: whitesmoke;
+}
+
+/* --- BUTTON STYLING (EXTRUDED) --- */
+#search{
+    padding: 10px 20px;
+    color: white;
+    outline: none;
+    background: var(--accent-indigo); /* Dark blue from the gradient */
+    font-size: 17px;
+    border-radius: var(--neumo-radius);
+    cursor: pointer;
+    border: none;
+    margin-left: 10px;
+    /* Neomorphic extruded/raised shadow effect */
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5), /* Darker shadow over the image */
+                -6px -6px 12px rgba(255, 255, 255, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+#search:active {
+    /* Pressed effect when clicked */
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.5),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.2);
+}
+#search:hover {
+    /* Adjusted to use the new accent-indigo for consistency */
+    background: var(--accent-indigo);
+    opacity: 0.8;
+}
+/* --- MAIN WEATHER CARD STYLING (EXTRUDED) --- */
+.weather{
+    text-align: center;
+    color: white; 
+    padding: 20px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6),
+                -10px -10px 20px rgba(255, 255, 255, 0.2);
+    margin-top: 30px;
+}
+#city{
+    font-size: 30px;
+    margin-bottom: 10px;
+    /* ⬅️ Using new, lighter accent color */
+    color: var(--accent-indigo); 
+}
+.weather img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    /* Recessed circle effect for the icon background */
+    background: var(--base-color);
+    box-shadow: inset 5px 5px 10px var(--dark-shadow),
+                inset -5px -5px 10px var(--light-shadow);
+}
+#temperature{
+    font-size: 50px;
+    margin: 0;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif; /* ⬅️ CHANGED FONT */
+    /* ⬅️ Using new, lighter accent color */
+    color: var(--accent-indigo); 
+}
+.temp-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+}
+#clouds{
+    font-size: 20px;
+    background: var(--base-color);
+    padding: 5px 25px;
+    border-radius: 20px;
+    /* Subtle extruded effect for the clouds label */
+    box-shadow: 3px 3px 6px var(--dark-shadow),
+                -3px -3px 6px var(--light-shadow);
+    /* ⬅️ Using new, lighter accent color */
+    color: var(--accent-indigo);
+    display: inline-block;
+}
+main{
+    display: grid;
+    grid-column-gap: 25px;
+    grid-template-columns: 1fr 5px 1fr;
+    align-items: flex-start;
+    margin: 50px 50px;
+    color: white;
+}
+
+/* --- HOURLY FORECAST ITEM STYLING (SUBTLE EXTRUDED) --- */
+.next{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: var(--neumo-radius);
+    /* Use a translucent white/light base on the dark background */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6),
+                -10px -10px 20px rgba(255, 255, 255, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+.next:hover {
+    /* Subtle press effect on hover */
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5),
+                inset -3px -3px 6px rgba(255, 255, 255, 0.1);
+}
+
+.next p,.next h3{
+    margin: 3px 0;
+}
+.forecstD{
+    margin: 20px 50px;
+    color: aliceblue;
+}
+.weekF{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+}
+.cast-header{
+    color: white;
+    /* ⬅️ CHANGED BACKGROUND TO VIBRANT ORANGE FOR HIGHER CONTRAST */
+    background: var(--accent-indigo);
+    width: max-content;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5),
+                -3px -3px 6px rgba(255, 255, 255, 0.1);
+}
+/* --- DIVIDER STYLING (FLAT/RECESSED) --- */
+.divider1{
+    /* Match the original color but use the variable for consistency */
+    background: rgba(254, 189, 132, 0.539);
+    height: 100%;
+    min-height: 200px;
+    border-radius: 5px;
+    width: 5px;
+    /* Simple inset/recessed look */
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5),
+                inset -1px -1px 2px rgba(255, 255, 255, 0.2);
+}
+.divider2{
+    background: rgba(254, 189, 132, 0.539);
+    height: 5px;
+    width: 30%;
+    margin: 0 auto 20px auto; 
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5),
+                inset -1px -1px 2px rgba(255, 255, 255, 0.2);
+}
+.time,.date{
+    color: var(--accent-indigo);
+    font-weight: bolder;
+}
+.desc{
+    /* ⬅️ Color remains the bright green variable */
+    color: rgba(254, 189, 132, 0.539); 
+    font-weight: bold;
+}
+
+/* --- DAILY FORECAST CARD STYLING (EXTRUDED) --- */
+.dayF {
+    padding: 15px;
+    border-radius: 20px;
+    /* Use a translucent white/light base on the dark background */
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6),
+                -10px -10px 20px rgba(255, 255, 255, 0.2);
+}
+.dayF:hover {
+    /* Subtle press effect on hover */
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.6),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.2);
+}
