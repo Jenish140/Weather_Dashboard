@@ -32,6 +32,8 @@ Neumorphic Design: A beautiful and modern user interface with soft, extruded ele
 
 Additional Notes
 
+Replace the API Key.
+
 The temperature is displayed in Celsius.
 
 The application requires an internet connection to fetch weather data.
