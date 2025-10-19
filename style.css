@@ -25,16 +25,13 @@ h1{
     --transparent-base: rgba(255, 255, 255, 0.2);
 }
 body{
-    /* KEEPING THE ORIGINAL BACKGROUND */
     padding: 1rem 5rem;
-    font-family: 'Montserrat', sans-serif; /* ⬅️ CHANGED FONT */
+    font-family: 'Montserrat', sans-serif;
     text-transform: capitalize;
     background: url('./background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     color: aliceblue; 
-    
-    /* 🛠️ FIX for Full-Screen Background */
     min-height: 100vh;
     margin: 0;
 }
@@ -45,12 +42,11 @@ body{
     padding: 10px 0;
 }
 .header h1{
-    /* Using a bright accent color from the original CSS */
     color: var(--accent-indigo);
     text-decoration: none;
-    font-family: 'Oswald', sans-serif; /* ⬅️ CHANGED FONT */
+    font-family: 'Oswald', sans-serif;
 }
-/* --- INPUT FIELD STYLING (RECESSED) --- */
+/* --- INPUT FIELD STYLING --- */
 #input{
     font-size: 18px;
     padding: 10px 15px;
@@ -61,27 +57,26 @@ body{
     /* Neomorphic recessed/inner shadow effect */
     box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.6),
                 inset -5px -5px 10px rgba(255, 255, 255, 0.1);
-    color: white; /* Dark text color for readability */
+    color: white;
     transition: all 0.2s ease-in-out;
 }
 #input::placeholder {
-    /* ⬅️ Changed to a brighter, translucent white for better visibility */
     color: whitesmoke;
 }
 
-/* --- BUTTON STYLING (EXTRUDED) --- */
+/* --- BUTTON STYLING --- */
 #search{
     padding: 10px 20px;
     color: white;
     outline: none;
-    background: var(--accent-indigo); /* Dark blue from the gradient */
+    background: var(--accent-indigo);
     font-size: 17px;
     border-radius: var(--neumo-radius);
     cursor: pointer;
     border: none;
     margin-left: 10px;
     /* Neomorphic extruded/raised shadow effect */
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5), /* Darker shadow over the image */
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5),
                 -6px -6px 12px rgba(255, 255, 255, 0.2);
     transition: all 0.2s ease-in-out;
 }
@@ -91,11 +86,10 @@ body{
                 inset -4px -4px 8px rgba(255, 255, 255, 0.2);
 }
 #search:hover {
-    /* Adjusted to use the new accent-indigo for consistency */
     background: var(--accent-indigo);
     opacity: 0.8;
 }
-/* --- MAIN WEATHER CARD STYLING (EXTRUDED) --- */
+/* --- MAIN WEATHER CARD STYLING --- */
 .weather{
     text-align: center;
     color: white; 
@@ -111,14 +105,12 @@ body{
 #city{
     font-size: 30px;
     margin-bottom: 10px;
-    /* ⬅️ Using new, lighter accent color */
     color: var(--accent-indigo); 
 }
 .weather img{
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    /* Recessed circle effect for the icon background */
     background: var(--base-color);
     box-shadow: inset 5px 5px 10px var(--dark-shadow),
                 inset -5px -5px 10px var(--light-shadow);
@@ -128,8 +120,7 @@ body{
     margin: 0;
     margin-left: 30px;
     margin-bottom: 10px;
-    font-family: 'Oswald', sans-serif; /* ⬅️ CHANGED FONT */
-    /* ⬅️ Using new, lighter accent color */
+    font-family: 'Oswald', sans-serif;
     color: var(--accent-indigo); 
 }
 .temp-box{
@@ -143,10 +134,8 @@ body{
     background: var(--base-color);
     padding: 5px 25px;
     border-radius: 20px;
-    /* Subtle extruded effect for the clouds label */
     box-shadow: 3px 3px 6px var(--dark-shadow),
                 -3px -3px 6px var(--light-shadow);
-    /* ⬅️ Using new, lighter accent color */
     color: var(--accent-indigo);
     display: inline-block;
 }
@@ -159,7 +148,7 @@ main{
     color: white;
 }
 
-/* --- HOURLY FORECAST ITEM STYLING (SUBTLE EXTRUDED) --- */
+/* --- HOURLY FORECAST ITEM STYLING --- */
 .next{
     display: flex;
     justify-content: space-between;
@@ -167,7 +156,6 @@ main{
     margin: 10px 0;
     padding: 10px 15px;
     border-radius: var(--neumo-radius);
-    /* Use a translucent white/light base on the dark background */
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -176,7 +164,6 @@ main{
     transition: all 0.2s ease-in-out;
 }
 .next:hover {
-    /* Subtle press effect on hover */
     box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5),
                 inset -3px -3px 6px rgba(255, 255, 255, 0.1);
 }
@@ -195,7 +182,6 @@ main{
 }
 .cast-header{
     color: white;
-    /* ⬅️ CHANGED BACKGROUND TO VIBRANT ORANGE FOR HIGHER CONTRAST */
     background: var(--accent-indigo);
     width: max-content;
     padding: 5px 15px;
@@ -207,13 +193,11 @@ main{
 }
 /* --- DIVIDER STYLING (FLAT/RECESSED) --- */
 .divider1{
-    /* Match the original color but use the variable for consistency */
     background: rgba(254, 189, 132, 0.539);
     height: 100%;
     min-height: 200px;
     border-radius: 5px;
     width: 5px;
-    /* Simple inset/recessed look */
     box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5),
                 inset -1px -1px 2px rgba(255, 255, 255, 0.2);
 }
@@ -231,16 +215,14 @@ main{
     font-weight: bolder;
 }
 .desc{
-    /* ⬅️ Color remains the bright green variable */
     color: rgba(254, 189, 132, 0.539); 
     font-weight: bold;
 }
 
-/* --- DAILY FORECAST CARD STYLING (EXTRUDED) --- */
+/* --- DAILY FORECAST CARD STYLING --- */
 .dayF {
     padding: 15px;
     border-radius: 20px;
-    /* Use a translucent white/light base on the dark background */
     text-align: center;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(25px);
@@ -249,7 +231,6 @@ main{
                 -10px -10px 20px rgba(255, 255, 255, 0.2);
 }
 .dayF:hover {
-    /* Subtle press effect on hover */
     box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.6),
                 inset -4px -4px 8px rgba(255, 255, 255, 0.2);
 }
